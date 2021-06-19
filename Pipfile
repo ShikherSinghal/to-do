@@ -1,0 +1,45 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "==3.0.6"
+channels = "*"
+djangorestframework = "*"
+django-redis = "*"
+pika = "*"
+channels-redis = "*"
+requests = "*"
+aioredis = "*"
+aio-pika = "*"
+pyjwt = "*"
+"psycopg2" = "==2.7.7"
+"psycopg2-binary" = "==2.8.2"
+"wget" = "*"
+python-dotenv = "*"
+pandas = "*"
+numpy = "*"
+uwsgi = "*"
+daphne = "*"
+pylint-django = "*"
+django-extensions = "*"
+python-logstash = "*"
+celery = "==4.3.0"
+influxdb = "*"
+django-rest-auth = "*"
+opsgenie-sdk = "*"
+python-dateutil = "*"
+websockets = "*"
+django-model-utils = "*"
+bs4 = "*"
+paho-mqtt = "*"
+django-rest-knox = "*"
+
+[dev-packages]
+"flake8" = "*"
+pylint = "*"
+"autopep8" = "*"
+
+[requires]
+python_version = "3.7"

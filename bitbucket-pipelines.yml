@@ -1,0 +1,44 @@
+image: nikolaik/python-nodejs:python3.7-nodejs13
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Docker image push
+          caches:
+            - docker
+            - nodemodules
+          services:
+            - docker
+          script:
+            - make login
+            - make build push notify
+    release/*:
+      - step:
+          name: Release docker image push
+          caches:
+            - docker
+            - nodemodules
+          services:
+            - docker
+          script:
+            - make login
+            - make build push notify
+  tags:
+    '*':
+      - step:
+          name: Tagged docker image push
+          caches:
+            - docker
+            - nodemodules
+          services:
+            - docker
+          script:
+            - make login
+            - make build push notify
+definitions:
+  caches:
+    nodemodules: js/node_modules
+  services:
+    docker:
+      memory: 2048

@@ -1,0 +1,53 @@
+# Editor
+.vscode
+
+# Node
+node_modules
+package-lock.json
+js/dist
+
+# Project
+*.sqlite3
+logs
+local.py
+
+
+# Python
+*.pyc
+config/local.py
+
+# Dashboard
+.DS_Store
+node_modules
+/dist
+celerybeat*
+js/dist
+
+# local env files
+.env
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+# Media
+media/
+
+# rbd file
+dump.rdb
+*.rdb
+
+# Static
+static/

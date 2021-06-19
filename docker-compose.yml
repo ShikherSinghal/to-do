@@ -1,0 +1,21 @@
+# for local development
+version: '3.7'
+services:
+  todo:
+    container_name: todo
+    build:
+      context: .
+    working_dir: /app
+    ports:
+      - '8000:8000'
+    volumes:
+      - '.:/app'
+    #command: /bin/sh -c "npm i && npm run dev"
+    env_file:
+      - .env
+    networks:
+      - swarm
+networks:
+  swarm:
+    driver: "bridge"
+    name: "swarm"

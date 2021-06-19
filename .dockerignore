@@ -1,0 +1,7 @@
+dump.rdb
+.env
+.env.*
+Dockerfile
+.dockerignore
+logs/*
+celerybeat*
