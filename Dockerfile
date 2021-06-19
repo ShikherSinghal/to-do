@@ -8,17 +8,10 @@ RUN pip install pipenv
 COPY Pipfile ./
 COPY Pipfile.lock ./
 RUN pipenv install
-
+COPY . .
 CMD ["pipenv","run","python","manage.py","collectstatic","--noinput"]
-# RUN pipenv run python manage.py migrate
+
 CMD ["pipenv","run","python", "manage.py", "migrate",]
 
-COPY . .
-# COPY config/supervisord.conf /etc/supervisor/conf.d/todo.conf
-#Copy logrotate nginx configuration
-# COPY config/logrotate/* /etc/logrotate.d/
-# RUN chmod +x entrypoint.sh
-
-
 WORKDIR /app
-CMD ["pipenv","run","python", "manage.py", "runserver", "8000"]
+CMD ["pipenv","run","python", "manage.py", "runserver", "0:8000"]

@@ -2,7 +2,7 @@
 version: '3.7'
 services:
   todo:
-    container_name: todo
+    container_name: todo_backend
     build:
       context: .
     working_dir: /app
@@ -10,9 +10,7 @@ services:
       - '8001:8000'
     volumes:
       - '.:/app'
-    #command: /bin/sh -c "npm i && npm run dev"
-    env_file:
-      - .env
+    command: pipenv run python manage.py runserver 0:8000
     networks:
       - swarm
 networks:
