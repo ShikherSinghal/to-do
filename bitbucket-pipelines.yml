@@ -12,7 +12,7 @@ pipelines:
             - docker
           script:
             - make login
-            - make build push notify
+            - make build push
     release/*:
       - step:
           name: Release docker image push
@@ -23,7 +23,7 @@ pipelines:
             - docker
           script:
             - make login
-            - make build push notify
+            - make build push
   tags:
     '*':
       - step:
@@ -35,7 +35,7 @@ pipelines:
             - docker
           script:
             - make login
-            - make build push notify
+            - make build push
 definitions:
   caches:
     nodemodules: js/node_modules
