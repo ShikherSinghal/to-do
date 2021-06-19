@@ -1,6 +1,6 @@
 FROM python:3.7
 RUN apt-get update
-RUN apt-get install -y supervisor vim logrotate
+RUN apt-get install -y supervisor
 
 WORKDIR /app
 RUN mkdir media
@@ -11,7 +11,7 @@ RUN pipenv install
 COPY . .
 COPY config/supervisord.conf /etc/supervisor/conf.d/todo.conf
 #Copy logrotate nginx configuration
-COPY config/logrotate/* /etc/logrotate.d/
+# COPY config/logrotate/* /etc/logrotate.d/
 RUN chmod +x entrypoint.sh
 
 
