@@ -37,6 +37,7 @@ paho-mqtt = "*"
 django-rest-knox = "*"
 django-heroku = "*"
 whitenoise = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 "flake8" = "*"

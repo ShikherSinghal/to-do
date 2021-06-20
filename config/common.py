@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8+4=-*i%ff=&+@*hl9_sf#d)m7crp)c^^9)c#6d$#0v^2tp$gf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #os.getenv('ENVIRONMENT') != 'production'
+DEBUG = False #os.getenv('ENVIRONMENT') != 'production'
 ALLOWED_HOSTS = ['*']
 
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'rest_framework.authtoken',
     'rest_auth',
     'apps.todo',
@@ -47,7 +48,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    #'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -62,7 +63,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
-        'APP_DIRS': True,
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -141,10 +142,10 @@ REST_FRAMEWORK = {
     ]
 }
 
-#CORS_ORIGIN_ALLOW_ALL = True
-#CORS_ORIGIN_WHITELIST = [
-#    'http://127.0.0.1:8000',
-#]
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = [
+   'http://0.0.0.0:8080'
+]
 
 #Site timezone
 SITE_TIMEZONE = os.getenv('SITE_TIMEZONE','UTC')
