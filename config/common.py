@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8+4=-*i%ff=&+@*hl9_sf#d)m7crp)c^^9)c#6d$#0v^2tp$gf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False #os.getenv('ENVIRONMENT') != 'production'
+DEBUG = True #os.getenv('ENVIRONMENT') != 'production'
 ALLOWED_HOSTS = ['*']
 
 
@@ -126,12 +126,8 @@ LOGOUT_REDIRECT_URL = '/'
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets'),
-]
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

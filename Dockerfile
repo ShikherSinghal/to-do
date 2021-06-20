@@ -9,9 +9,3 @@ COPY Pipfile ./
 COPY Pipfile.lock ./
 RUN pipenv install
 COPY . .
-CMD ["pipenv","run","python","manage.py","collectstatic","--noinput"]
-
-CMD ["pipenv","run","python", "manage.py", "migrate",]
-
-WORKDIR /app
-CMD ["pipenv","run","python", "manage.py", "runserver", "0:8000"]

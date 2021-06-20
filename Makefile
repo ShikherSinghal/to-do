@@ -1,7 +1,7 @@
-NAME		:= todo-backend
+NAME		:= shikher1/experimental
 TAG			:= $$(echo $$(git describe --dirty --abbrev=7 --tags --always --first-parent --long))
 BASENAME	:= ${NAME}
-IMG			:= ${BASENAME}:${TAG}
+IMG			:= ${BASENAME}:BACKEND
 EXPERIMENTAL:= ${BASENAME}:experimental
 LATEST		:= ${BASENAME}:latest
 

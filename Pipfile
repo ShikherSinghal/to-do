@@ -35,6 +35,8 @@ django-model-utils = "*"
 bs4 = "*"
 paho-mqtt = "*"
 django-rest-knox = "*"
+django-heroku = "*"
+whitenoise = "*"
 
 [dev-packages]
 "flake8" = "*"
