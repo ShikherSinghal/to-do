@@ -38,7 +38,6 @@ django-rest-knox = "*"
 django-heroku = "*"
 whitenoise = "*"
 django-cors-headers = "*"
-dotenv = "*"
 
 [dev-packages]
 "flake8" = "*"
